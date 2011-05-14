@@ -35,6 +35,8 @@
 #endif
 }
 
+@property (nonatomic, readonly) BOOL playing;
+
 - (id)initWithFmt:(int[12])fmtp;
 - (void)setGain:(Float32)gain;
 - (void)start;

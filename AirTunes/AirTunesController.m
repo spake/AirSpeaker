@@ -37,6 +37,12 @@ enum tag_udp {
 
 @synthesize metadataDelegate;
 @synthesize coverDelegate;
+@synthesize connectionStatusDelegate;
+
+- (BOOL)playing
+{
+    return audioPlayer.playing;
+}
 
 - (void)publishNetService
 {
@@ -126,6 +132,7 @@ enum tag_udp {
 - (void)socket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket
 {
 	NSLog(@"[Net] accept connection from %@:%hu", [newSocket connectedHost], [newSocket connectedPort]);
+    [connectionStatusDelegate clientConnected];
 	
 	[newSocket readDataToData:[GCDAsyncSocket CRLFData] withTimeout:TIMEOUT_NONE tag:TAG_REQUEST];
 }
@@ -672,6 +679,7 @@ static NSData *getLocalAddress(NSData *addr)
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
 {
 	NSLog(@"[Net] disconnected");
+    [connectionStatusDelegate clientDisconnected];
 	[self cleanup];
 }
 

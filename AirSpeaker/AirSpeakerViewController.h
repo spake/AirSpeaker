@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AirTunesController.h"
 
-@interface AirSpeakerViewController : UIViewController <AirTunesMetadataDelegate, AirTunesCoverDelegate> {
+@interface AirSpeakerViewController : UIViewController <AirTunesMetadataDelegate, AirTunesCoverDelegate, AirTunesConnectionStatusDelegate> {
     AirTunesController *airtunes;
 	IBOutlet UIImageView *imageView;
 	IBOutlet UILabel *artistLabel;
@@ -20,5 +20,7 @@
 
 - (void)setMetadata:(NSDictionary *)metadata;
 - (void)setCoverData:(NSData *)cover;
+- (void)clientConnected;
+- (void)clientDisconnected;
 
 @end

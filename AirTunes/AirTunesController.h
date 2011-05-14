@@ -26,6 +26,13 @@
 
 @end
 
+@protocol AirTunesConnectionStatusDelegate
+
+- (void)clientConnected;
+- (void)clientDisconnected;
+
+@end
+
 @interface AirTunesController : NSObject <NSNetServiceDelegate> {
 	NSNetService		*netService;
 	GCDAsyncSocket		*asyncSocket;
@@ -49,10 +56,14 @@
 	
 	id<AirTunesMetadataDelegate> metadataDelegate;
 	id<AirTunesCoverDelegate> coverDelegate;
+    id<AirTunesConnectionStatusDelegate> connectionStatusDelegate;
 }
 
 @property (nonatomic, retain) id<AirTunesMetadataDelegate> metadataDelegate;
 @property (nonatomic, retain) id<AirTunesCoverDelegate> coverDelegate;
+@property (nonatomic, retain) id<AirTunesConnectionStatusDelegate> connectionStatusDelegate;
+
+@property (nonatomic, readonly) BOOL playing;
 
 - (BOOL)start;
 

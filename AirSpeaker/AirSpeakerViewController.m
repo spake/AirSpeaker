@@ -17,6 +17,7 @@
 	airtunes = [airtunesController retain];
 	airtunes.metadataDelegate = self;
 	airtunes.coverDelegate = self;
+    airtunes.connectionStatusDelegate = self;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -54,13 +55,12 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.alpha = 0;
 }
-*/
 
 - (void)viewDidUnload
 {
@@ -98,6 +98,24 @@
 - (void)setCoverData:(NSData *)cover
 {
 	imageView.image = [UIImage imageWithData:cover];
+}
+
+- (void)clientConnected
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    self.view.alpha = 1;
+    [UIView commitAnimations];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+}
+
+- (void)clientDisconnected
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    self.view.alpha = 0;
+    [UIView commitAnimations];
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
 }
 
 @end

@@ -23,7 +23,7 @@
 	[self.window makeKeyAndVisible];
 
 	airtunes = [[AirTunesController alloc] init];
-	[airtunes start];
+	//[airtunes start];
 	
 	viewController.airtunes = airtunes;
 
@@ -41,6 +41,24 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
 	// Save data if appropriate.
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    if (!airtunes.playing)
+    {
+        [airtunes start];
+    }
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    
 }
 
 - (void)dealloc

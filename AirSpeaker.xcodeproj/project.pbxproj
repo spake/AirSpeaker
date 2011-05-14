@@ -34,6 +34,7 @@
 		28E3D43312EDEACF00BB15D9 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28E3D43112EDEACF00BB15D9 /* MainWindow.xib */; };
 		28E3D43612EDEACF00BB15D9 /* AirSpeakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E3D43512EDEACF00BB15D9 /* AirSpeakerViewController.m */; };
 		28E3D43912EDEACF00BB15D9 /* AirSpeakerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28E3D43712EDEACF00BB15D9 /* AirSpeakerViewController.xib */; };
+		5E5FB34C137EBD2400C2FC49 /* AirPlay Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FB34B137EBD2400C2FC49 /* AirPlay Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		28E3D43412EDEACF00BB15D9 /* AirSpeakerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirSpeakerViewController.h; sourceTree = "<group>"; };
 		28E3D43512EDEACF00BB15D9 /* AirSpeakerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirSpeakerViewController.m; sourceTree = "<group>"; };
 		28E3D43812EDEACF00BB15D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AirSpeakerViewController.xib; sourceTree = "<group>"; };
+		5E5FB34B137EBD2400C2FC49 /* AirPlay Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AirPlay Icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 		285BCFF6135D079100E712C9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				5E5FB34B137EBD2400C2FC49 /* AirPlay Icon.png */,
 				285BCFFD135D0AF700E712C9 /* AirSpeaker iPad Icon.png */,
 				285BCFFE135D0AF800E712C9 /* AirSpeaker iPhone Icon.png */,
 				285BCFFF135D0AF800E712C9 /* AirSpeaker iPhone Retina Icon.png */,
@@ -279,6 +282,7 @@
 				285BD000135D0AF800E712C9 /* AirSpeaker iPad Icon.png in Resources */,
 				285BD001135D0AF800E712C9 /* AirSpeaker iPhone Icon.png in Resources */,
 				285BD002135D0AF800E712C9 /* AirSpeaker iPhone Retina Icon.png in Resources */,
+				5E5FB34C137EBD2400C2FC49 /* AirPlay Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +359,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -369,6 +374,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

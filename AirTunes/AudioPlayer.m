@@ -38,6 +38,8 @@ struct alac_cookie {
 
 @implementation AudioPlayer
 
+@synthesize playing;
+
 static void logOSStatus(const char *func, OSStatus status)
 {
 	if (status != noErr)
